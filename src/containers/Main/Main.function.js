@@ -7,13 +7,12 @@ export default function Main({ children }) {
   );
 }
 
-Main.Card = function Card({ title, subtitle, imgSrc, link }) {
+Main.Card = function Card({ title, subtitle, link }) {
   return (
     <div className={styles['container']}>
       <section className={styles['card']}>
         <p className={styles['title']}>{title}</p>
         <p className={styles['subtitle']}>{subtitle}</p>
-        <img className={styles['img']} src={imgSrc} alt={title} />
       </section>
       <ShowmoreButton link={link} />
     </div>

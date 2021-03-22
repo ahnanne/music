@@ -4,7 +4,7 @@ $white: #FCF6F5FF;
 $trueWhite: #FFFFFF;
 
 .main {
-  padding: 80px;
+  padding: 40px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -12,8 +12,8 @@ $trueWhite: #FFFFFF;
 
 .container {
   position: relative;
-  width: 300px;
-  height: 200px;
+  width: 260px;
+  height: 180px;
   background-color: $white;
   border-radius: 10px;
   box-shadow:
@@ -24,6 +24,7 @@ $trueWhite: #FFFFFF;
   margin: 20px 17px;
 }
 
+/**
 .img {
   position: absolute;
   display: inline-block;
@@ -31,6 +32,7 @@ $trueWhite: #FFFFFF;
   right: 18px;
   bottom: 24px;
 }
+*/
 
 .title {
   margin: 20px 0;

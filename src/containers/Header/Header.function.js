@@ -19,22 +19,24 @@ Header.LinkedHeading = function LinkedHeading({ link, children }) {
   );
 };
 
-Header.SearchForm = function SearchForm({ keyword, placeholder, id, handleKeyword }) {
+Header.SearchForm = function SearchForm({ input, placeholder, id, handleInput, handleKeyword }) {
   return (
     <div className={styles['searchForm']}>
       <input
-        value={keyword}
+        value={input}
         className={styles['flexItem']}
         type="text"
         placeholder={placeholder}
         name={id}
         id={id}
-        onChange={handleKeyword}
+        onChange={handleInput}
+        onKeyUp={handleKeyword}
       />
       <label htmlFor={id} className={a11yHidden}>{placeholder}</label>
       <button
         type="button"
         className={`${styles['button']} ${styles['flexItem']}`}
+        onClick={handleKeyword}
       >검색</button>
     </div>
   );
