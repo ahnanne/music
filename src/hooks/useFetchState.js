@@ -4,7 +4,7 @@ export default function useFetchState(api = '') {
   // API가 과도하게 호출되는 것을 방지하기 위해,
   // 최초 렌더링은 하지 않음.
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [data, setData] = useState([]);
 

@@ -3,6 +3,7 @@ import './App.scss';
 import Header from 'containers/Header/Header.function';
 import Main from 'containers/Main/Main.function';
 import useFetchState from 'hooks/useFetchState';
+import { ReactComponent as Atom } from 'assets/Atom.svg';
 
 const homelink = 'https://ahnanne.github.io/music';
 
@@ -31,6 +32,18 @@ function App() {
   const handleInput = e => {
     setInput(e.target.value);
   };
+
+  if (isLoading) {
+    return (
+      <Atom />
+    );
+  }
+
+  if (hasError) { // 에러가 발생한 상황에서 렌더링
+    return (
+      <div role="alert">{hasError.message}</div>
+    );
+  }
 
   return (
     <div className="App">

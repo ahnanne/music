@@ -18,3 +18,5 @@ Main.Card = function Card({ title, subtitle, link }) {
     </div>
   )
 };
+
+// <div>${keyword}에 대한 검색 결과가 없습니다.</div>

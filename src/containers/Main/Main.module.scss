@@ -37,9 +37,23 @@ $trueWhite: #FFFFFF;
 .title {
   margin: 20px 0;
   font-size: 1.2em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .subtitle {
   margin: 10px 0;
   font-size: 1em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-wrap: break-word;
 }
