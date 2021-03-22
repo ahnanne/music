@@ -1,23 +1,25 @@
-import './App.scss'
-import logo from 'assets/logo.svg'
+import './App.scss';
+import logo from 'assets/logo.svg';
+import Header from 'containers/Header/Header.function';
+
+const homelink = 'https://ahnanne.github.io/music';
+
+/* -------------------------------------------------------------------------- */
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <code>src/App.js</code> 문서를 수정하면 실시간 업데이트 됩니다
-        </p>
-        <a
-          className="App-link"
-          href="https://ko.reactjs.org"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          React를 배워보세요
-        </a>
-      </header>
+      <Header>
+        <Header.LinkedHeading link={homelink}>
+          앨범 찾기 :)
+        </Header.LinkedHeading>
+        <Header.SearchForm
+          placeholder="가수명, 노래 제목, 앨범 이름으로 검색하기"
+          id="searchAlbum"
+        />
+      </Header>
+
+      {/* <Main></Main> */}
     </div>
   )
 }
