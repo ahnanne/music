@@ -10,7 +10,7 @@ export default function useFetchState(api = '') {
 
   
   useEffect(() => {
-    if (api === 'http://ws.audioscrobbler.com/2.0/?method=album.search&album=&api_key=fca820d24322bcf89930e8d4ab63a2e1&format=json') return;
+    if (api === 'https://ws.audioscrobbler.com/2.0/?method=album.search&album=&api_key=fca820d24322bcf89930e8d4ab63a2e1&format=json') return;
 
     setIsLoading(true);
 
