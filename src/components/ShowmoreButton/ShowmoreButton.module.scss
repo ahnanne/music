@@ -2,5 +2,8 @@ $darkSpaceCherry: #990011FF;
 $white: #FCF6F5FF;
 
 .button {
-  
+  width: 100px;
+  height: 50px;
+  background-color: $darkSpaceCherry;
+  color: $white;
 }

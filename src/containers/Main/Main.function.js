@@ -1,9 +1,9 @@
-import ShowmoreButton from 'components/ShowmoreButton/ShowmoreButton.function';
+import ShowmoreButton from 'components/ShowmoreButton/ShowmoreButton';
 import styles from './Main.module.scss';
 
 export default function Main({ children }) {
   return (
-    <Main>{children}</Main>
+    <div className={styles['main']}>{children}</div>
   );
 }
 
