@@ -1,12 +1,13 @@
 import './App.scss';
-import logo from 'assets/logo.svg';
 import Header from 'containers/Header/Header.function';
+import Main from 'containers/Main/Main.function';
 
 const homelink = 'https://ahnanne.github.io/music';
 
 /* -------------------------------------------------------------------------- */
 
 function App() {
+  // http://ws.audioscrobbler.com/2.0/?method=album.search&album=forever&api_key=fca820d24322bcf89930e8d4ab63a2e1&format=json
   return (
     <div className="App">
       <Header>
@@ -19,7 +20,13 @@ function App() {
         />
       </Header>
 
-      {/* <Main></Main> */}
+      <Main>
+        <Main.Card
+          title="Black Mamba"
+          subtitle="에스파"
+          link="http://naver.com"
+        />
+      </Main>
     </div>
   )
 }

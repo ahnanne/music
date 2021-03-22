@@ -44,6 +44,7 @@ $white: #FCF6F5FF;
 }
 
 .button {
+  user-select: none;
   font-weight: 700;
   background-color: $white;
   color: #181818;
