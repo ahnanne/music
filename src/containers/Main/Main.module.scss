@@ -1,16 +1,43 @@
-.container {
-  width: 300px;
-  height: 200px;
+$spaceCherry: rgba(219, 96, 110, 0.712);
+$spaceCherryShadow: rgba(219, 96, 110, 0.192);
+$white: #FCF6F5FF;
+$trueWhite: #FFFFFF;
+
+.main {
+  padding: 80px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.card {
+.container {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: $white;
+  border-radius: 10px;
+  box-shadow:
+    1px 0 10px 0 $spaceCherryShadow,
+    0 1px 10px 0 $spaceCherryShadow;
+  padding: 18px;
+  color: #181818;
+  margin: 20px 17px;
+}
 
+.img {
+  position: absolute;
+  display: inline-block;
+  width: 100px;
+  right: 18px;
+  bottom: 24px;
 }
 
 .title {
+  margin: 20px 0;
   font-size: 1.2em;
 }
 
 .subtitle {
+  margin: 10px 0;
   font-size: 1em;
 }
