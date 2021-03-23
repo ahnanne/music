@@ -7,30 +7,29 @@ import { ReactComponent as Atom } from 'assets/Atom.svg';
 
 const homelink = 'https://ahnanne.github.io/music';
 
+const makeApi = word => {
+  return `https://ws.audioscrobbler.com/2.0/?method=album.search&album=${word}&api_key=fca820d24322bcf89930e8d4ab63a2e1&format=json`;
+};
+
 /* -------------------------------------------------------------------------- */
 
 function App() {
   const [keyword, setKeyword] = useState('');
   const [input, setInput] = useState('');
-  const [api, setApi] = useState(() => keyword || keyword === 0
-      ? `https://ws.audioscrobbler.com/2.0/?method=album.search&album=${keyword}&api_key=fca820d24322bcf89930e8d4ab63a2e1&format=json`
-      : 'https://yts.mx/api/v2/list_movies.json?limit=1&query_term=');
-  const [isLoading, hasError, albumData] = useFetchState(api);
+  // const [api, setApi] = useState(() => `https://ws.audioscrobbler.com/2.0/?method=album.search&album=${keyword}&api_key=fca820d24322bcf89930e8d4ab63a2e1&format=json`);
+  
+  const [isLoading, hasError, albumData] = useFetchState(makeApi, keyword);
+
+  const handleInput = e => {
+    setInput(e.target.value);
+  };
 
   const handleKeyword = e => {
     if (e.key === 'Enter' || e.target.type === 'button') {
       if (input === '') return;
 
-      setApi(() => {
-        setKeyword(input);
-
-        return `https://ws.audioscrobbler.com/2.0/?method=album.search&album=${keyword}&api_key=fca820d24322bcf89930e8d4ab63a2e1&format=json`;
-      });
+      setKeyword(input);
     }
-  };
-
-  const handleInput = e => {
-    setInput(e.target.value);
   };
 
   if (isLoading) {

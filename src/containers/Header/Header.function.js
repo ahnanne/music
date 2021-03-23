@@ -23,7 +23,7 @@ Header.SearchForm = function SearchForm({ input, placeholder, id, handleInput, h
   return (
     <div className={styles['searchForm']}>
       <input
-        value={input}
+        // value={input}
         className={styles['flexItem']}
         type="text"
         placeholder={placeholder}
