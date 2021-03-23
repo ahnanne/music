@@ -21,14 +21,14 @@ export default function useFetchState(api = '') {
     
         if (json?.data?.movies) setData(null);
         else setData(json?.results?.albummatches?.album);
+
+        setIsLoading(false);
       } catch (err) {
         setHasError(true);
-        console.error(err);
       }
     };
     
     fetchData();
-    setIsLoading(false);
   }, [api]); // fetch는 api가 바뀔 때만 실행~
 
 
