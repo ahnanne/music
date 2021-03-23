@@ -15,7 +15,7 @@ function App() {
   const [api, setApi] = useState(() => keyword || keyword === 0
       ? `https://ws.audioscrobbler.com/2.0/?method=album.search&album=${keyword}&api_key=fca820d24322bcf89930e8d4ab63a2e1&format=json`
       : 'https://yts.mx/api/v2/list_movies.json?limit=1&query_term=');
-  const [isLoading, hasError, data] = useFetchState(api);
+  const [isLoading, hasError, albumData] = useFetchState(api);
 
   const handleKeyword = e => {
     if (e.key === 'Enter' || e.target.type === 'button') {
@@ -62,7 +62,7 @@ function App() {
 
       <Main>
         {
-          data?.map(({ url, name: title, artist }) => (
+          albumData?.map(({ url, name: title, artist }) => (
             <Main.Card
               key={url}
               title={title}
