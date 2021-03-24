@@ -1,0 +1,91 @@
+$spaceCherry: rgba(219, 96, 110, 0.712);
+$white: #FCF6F5FF;
+
+.popup {
+  position: fixed;
+  z-index: 999;
+  top: 10px;
+  right: 14px;
+  width: 218px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgba(252, 246, 245, 0.562);
+  border-radius: 10px;
+  padding: 7px;
+  font-size: .8em;
+  color: #181818;
+  white-space: nowrap;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: $white;
+  margin: 12px 0;
+}
+
+.button {
+  user-select: none;
+  width: 24px;
+  margin: 0 7px;
+  border: none;
+  border-radius: 3px;
+  background-color: $white;
+  color: #181818;
+  box-shadow: 0 4px 0 0 #181818;
+  transition: all 500ms cubic-bezier(.79,.2,.18,.67);
+}
+
+.button:hover {
+  box-shadow: 0 2px 0 0 #181818;
+  transform: translate(0px, 2px);
+}
+
+.button:active {
+  box-shadow: none;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.header {
+  background-color: $spaceCherry;
+  background: linear-gradient(to bottom,
+  rgba(219, 96, 110, 0.39) 0%,
+  rgba(219, 96, 110, 0.685) 50%,
+  rgb(219, 96, 110) 100%);
+  width: 100%;
+  padding: 180px 24px 20px;
+  overflow: hidden;
+}
+
+.a {
+  display: inline-block;
+  text-decoration: none;
+  color: $white;
+  font-weight: 400;
+  transition: transform 500ms cubic-bezier(.79,.2,.18,.67);
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+.a:hover {
+  transform: translate(0px, -8px);
+}
+
+.searchForm {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+}
+
+.flexItem {
+  max-width: 390px;
+  display: block;
+  padding: 10px;
+  font-size: 1em;
+  margin-bottom: 8px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}

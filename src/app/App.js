@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.scss';
 import Header from 'containers/Header/Header.function';
 import Main from 'containers/Main/Main.function';
+import CounterPopup from 'containers/CounterPopup/CounterPopup.function';
 import useFetchState from 'hooks/useFetchState';
 import { ReactComponent as Atom } from 'assets/Atom.svg';
 
@@ -16,8 +17,7 @@ const makeApi = word => {
 function App() {
   const [keyword, setKeyword] = useState('');
   const [input, setInput] = useState('');
-  // const [api, setApi] = useState(() => `https://ws.audioscrobbler.com/2.0/?method=album.search&album=${keyword}&api_key=fca820d24322bcf89930e8d4ab63a2e1&format=json`);
-  
+
   const [isLoading, hasError, albumData] = useFetchState(makeApi, keyword);
 
   const handleInput = e => {
@@ -58,6 +58,7 @@ function App() {
           handleKeyword={handleKeyword}
         />
       </Header>
+      <CounterPopup />
 
       <Main>
         {
