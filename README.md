@@ -2,7 +2,7 @@
 
 - [x] gh-pages 배포하기
 
-- [ ] 여러 state를 반환하는 custom Hook 만들기
+- [x] 여러 state를 반환하는 custom Hook 만들기
 
 ___
 
