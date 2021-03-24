@@ -34,6 +34,8 @@ export default function CounterPopup() {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   const { sentence, count } = state;
 
+  console.log(React.useReducer(() => {}, { number: 1 }));
+
   return (
     <div className={styles['popup']}>
       <h1 className={styles['h']}>m i n i COUNTER</h1>

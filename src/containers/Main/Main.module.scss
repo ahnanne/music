@@ -17,11 +17,19 @@ $trueWhite: #FFFFFF;
   background-color: $white;
   border-radius: 10px;
   box-shadow:
-    1px 0 10px 0 $spaceCherryShadow,
-    0 1px 10px 0 $spaceCherryShadow;
+    3px 0 18px 0 $spaceCherryShadow,
+    0 6px 20px 0 $spaceCherryShadow;
   padding: 18px;
   color: #181818;
   margin: 20px 17px;
+  transition: all 100ms linear;
+}
+
+.container:hover {
+  transform: translate(0, -6px);
+  box-shadow:
+    1px 0 18px 0 $spaceCherryShadow,
+    0 2px 20px 0 $spaceCherryShadow;
 }
 
 /**
