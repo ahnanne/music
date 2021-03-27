@@ -27,7 +27,7 @@ export default function useFetchState(api, param) { // api는 param을 이용하
   useEffect(() => {
     // setIsLoading(true);
 
-    if (api(param) === 'https://ws.audioscrobbler.com/2.0/?method=album.search&album=&api_key=fca820d24322bcf89930e8d4ab63a2e1&format=json') {
+    if (param === '') {
       setIsLoading(false);
       return;
     }

@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useReducer } from 'react';
+import produce from 'immer'; // 보통 produce라는 이름으로 많이 불러옴.
 import './App.scss';
 import Header from 'containers/Header/Header.function';
 import Main from 'containers/Main/Main.function';
@@ -12,23 +13,55 @@ const makeApi = word => {
   return `https://ws.audioscrobbler.com/2.0/?method=album.search&album=${word}&api_key=fca820d24322bcf89930e8d4ab63a2e1&format=json`;
 };
 
+const ACTION = {
+  UPDATE_KEYWORD: 'update keyword',
+  UPDATE_INPUT: 'update input',
+};
+
+const initState = {
+  keyword: '',
+  input: '',
+};
+
+const { UPDATE_KEYWORD, UPDATE_INPUT } = ACTION;
+
+function searchReducer(state, action) {
+
+  switch (action?.type) {
+    case UPDATE_KEYWORD:
+      return {...state, keyword: action.payload};
+
+    case UPDATE_INPUT:
+      return {...state, input: action.payload};
+
+    default:
+      return state;
+  }
+}
+
 /* -------------------------------------------------------------------------- */
 
 function App() {
-  const [keyword, setKeyword] = useState('');
-  const [input, setInput] = useState('');
+  const [state, dispatch] = useReducer(searchReducer, initState);
+  const { keyword, input } = state;
 
   const [isLoading, hasError, albumData] = useFetchState(makeApi, keyword);
 
   const handleInput = e => {
-    setInput(e.target.value);
+    dispatch({
+      type: UPDATE_INPUT,
+      payload: e.target.value,
+    });
   };
 
   const handleKeyword = e => {
     if (e.key === 'Enter' || e.target.type === 'button') {
       if (input === '') return;
 
-      setKeyword(input);
+      dispatch({
+        type: UPDATE_KEYWORD,
+        payload: input,
+      });
     }
   };
 
